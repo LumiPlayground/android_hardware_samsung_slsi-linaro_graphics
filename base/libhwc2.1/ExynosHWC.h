@@ -18,6 +18,7 @@
 #define ANDROID_EXYNOS_HWC_H_
 #include <hardware/hwcomposer2.h>
 #include <cutils/atomic.h>
+#include <fcntl.h>
 #include "ExynosMPPType.h"
 #include "ExynosHWCModule.h"
 #include "ExynosDevice.h"
