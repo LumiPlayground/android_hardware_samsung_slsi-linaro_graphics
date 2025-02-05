@@ -268,6 +268,11 @@ int ion_alloc_fd(int fd, size_t len, size_t align, unsigned int heap_mask,
 	return exynos_ion_alloc(fd, len, heap_mask, flags);
 }
 
+int ion_sync_fd(int fd, int handle_fd)
+{
+    return exynos_ion_sync_fd(fd, handle_fd);
+}
+
 #define DMA_BUF_IOCTL_TRACK    _IO('b', 8)
 #define DMA_BUF_IOCTL_UNTRACK  _IO('b', 9)
 /*
