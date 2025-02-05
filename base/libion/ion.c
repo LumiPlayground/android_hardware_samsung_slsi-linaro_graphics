@@ -253,6 +253,21 @@ int exynos_ion_alloc(int ion_fd, size_t len,
                                  : ion_alloc_modern(ion_fd, len, heap_mask, flags);
 }
 
+int ion_open() {
+    return exynos_ion_open();
+}
+
+int ion_close(int fd) {
+    return exynos_ion_close(fd);
+}
+
+int ion_alloc_fd(int fd, size_t len, size_t align, unsigned int heap_mask,
+		 unsigned int flags, int *handle_fd) {
+    (void)align;
+    (void)handle_fd;
+	return exynos_ion_alloc(fd, len, heap_mask, flags);
+}
+
 #define DMA_BUF_IOCTL_TRACK    _IO('b', 8)
 #define DMA_BUF_IOCTL_UNTRACK  _IO('b', 9)
 /*
