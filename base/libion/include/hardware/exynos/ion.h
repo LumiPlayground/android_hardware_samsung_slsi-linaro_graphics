@@ -70,6 +70,11 @@ const char *exynos_ion_get_heap_name(unsigned int legacy_heap_id);
 int exynos_ion_dma_buf_track(int fd);
 int exynos_ion_dma_buf_untrack(int fd);
 
+int ion_open();
+int ion_close(int fd);
+int ion_alloc_fd(int fd, size_t len, size_t align, unsigned int heap_mask,
+              unsigned int flags, int *handle_fd);
+
 __END_DECLS
 
 #endif /* __HARDWARE_EXYNOS_ION_H__ */
